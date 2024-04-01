@@ -1,0 +1,39 @@
+// 1em = 16px
+*,
+*::after,
+*::before{
+    padding:  0;
+    margin: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;       // 10/16 = 62.5
+   
+    @include respond(tab-land){
+        font-size: 56.25%;   //  9/16 
+    }
+    @include respond(tab-port){
+        font-size: 50%;  //   8/16 
+    } 
+    @include respond(big-desktop){
+        font-size: 75%;  //  12/16 
+    }
+
+}
+body{
+     font-family: 'Poppins' , sans-serif;
+     font-weight: 500;
+     line-height: 1.7;
+     color: $color-gray-dark;
+     padding: 3rem;
+     box-sizing: border-box;
+
+     @include respond(tab-port){
+        padding: 0;
+    }
+}
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
+}
